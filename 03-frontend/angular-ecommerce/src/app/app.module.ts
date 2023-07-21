@@ -6,7 +6,8 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './services/product.service';
 
-import { Routes, RouterModule } from "@angular/router"
+import { Routes, RouterModule } from "@angular/router";
+import { ProductCategoryMenuComponent } from './components/product-category-menu/product-category-menu.component'
 // the routes are top down prioritized, start from specific to general
 const routes: Routes = [
   {path: "category/:id", component: ProductListComponent}, // when path matches it creates a new instance of component
@@ -19,7 +20,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductCategoryMenuComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
