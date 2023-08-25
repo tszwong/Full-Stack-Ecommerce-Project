@@ -760,6 +760,10 @@ a.primary-btn:hover{
   font-weight: bold;
 }
 
+.visually-hidden {
+    display: none;
+}
+
 /* 
  * ----------------------------
  * Footer section
