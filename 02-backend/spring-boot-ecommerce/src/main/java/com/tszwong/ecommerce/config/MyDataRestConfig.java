@@ -1,9 +1,6 @@
 package com.tszwong.ecommerce.config;
 
-import com.tszwong.ecommerce.entity.Country;
-import com.tszwong.ecommerce.entity.Product;
-import com.tszwong.ecommerce.entity.ProductCategory;
-import com.tszwong.ecommerce.entity.State;
+import com.tszwong.ecommerce.entity.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.metamodel.EntityType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,11 +34,12 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
         // methods to disable
         HttpMethod[] theUnsupportedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE, HttpMethod.PATCH};
 
-        // disable HTTP methods for Product, ProductCategory, Country, State: PUT, POST, Delete
+        // disable HTTP methods for Product, ProductCategory, Country, State, Order: PUT, POST, Delete
         disableHttpMethods(Product.class, config, theUnsupportedActions);
         disableHttpMethods(ProductCategory.class, config, theUnsupportedActions);
         disableHttpMethods(Country.class, config, theUnsupportedActions);
         disableHttpMethods(State.class, config, theUnsupportedActions);
+        disableHttpMethods(Order.class, config, theUnsupportedActions);
 
         // call an internal helper method to expose the ids
         exposeIds(config);
